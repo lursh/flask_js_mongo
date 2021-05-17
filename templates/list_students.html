@@ -1,0 +1,29 @@
+<table id="mytable1" class="table table-striped">
+    <thead scope="row">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+		<th scope="col">Email</th>
+		<th scope="col">Phone</th>
+		<th scope="col">Guardian</th>
+		<th scope="col">Guardian Ph.no.</th>
+		<th scope="col">Institute Name</th>
+		<th scope="col">Home Address</th>
+		<th scope="col">DOB</th>
+    </thead>
+    <tbody>
+{% for key1 in records.find() %}
+	<tr scope="row">	 
+		<td>{{ loop.index }}</td>    
+		<td>{{ key1['name'] }}</td> 
+		<td>{{ key1['email'] }}</td>
+		<td>{{ key1['phone'] }}</td>
+		<td>{{ key1['gua_name'] }}</td>
+		<td>{{ key1['gua_phone'] }}</td>
+		<td>{{ key1['institute_name'] }}</td>
+		<td>{{ key1['home_address'] }}</td>
+		<td>{{ key1['dob'] }}</td>
+	</tr>
+{% endfor %}
+{% block content %}{% endblock %}
+    </tbody>
+</table>
