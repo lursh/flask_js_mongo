@@ -167,7 +167,9 @@
                               <input id="institute_name" type="text" class="form-control" name="institute_name" placeholder="Institute name">
                             </div>
                             <div class="input-group input-group-lg">
-                              <input id="room_no" type="text" class="form-control" name="room_no" placeholder="room no.">
+                              <select id="room_no" class="form-control" name="room_no" placeholder="room no.">
+                                <option>Select a room</option>
+                              </select>
                             </div>
 
 
@@ -218,6 +220,7 @@
     </body>
 </html>
 <script>
+  /* this control all the tabs functionality*/
     function openTab(evt, tabName) {
       // Declare all variables
       var i, tabcontent, tablinks;
@@ -235,7 +238,11 @@
       }
 
 
-
+      if(tabName=="add_students")
+      {
+        get_room_for_registration();
+      }
+       
       if(tabName=="list_students")
       {
         get_students();
@@ -262,7 +269,7 @@
     
     } 
 
-
+/*this is for listing allstudents in a table*/
 
     function get_students()
     {
@@ -283,7 +290,7 @@
 		});
     }
 	
-
+/* this is for adding a student*/
 	function add_students()
 	{ 
 		$(document).ready(function(){	
@@ -330,7 +337,7 @@
 		
 	}
 
-
+/* this is for adding a room*/
   function add_rooms()
 	{ 
 		$(document).ready(function(){	
@@ -362,7 +369,7 @@
 	}
 
 
-
+/* this is for geeting the self generated id for adding the room*/
 	function get_roomno()
 	{
     console.log("get room trigerred")
@@ -383,7 +390,7 @@
 	}
 
 
-
+/* this is for getting all rooms for listing them on a table*/
   function get_rooms()
 	{
     console.log("get room trigerred")
@@ -404,7 +411,7 @@
 	}
 
 
-
+/*this is for making the search bar work for students tables*/
 	$(document).ready(function(){
 	  $("#my_searchbar_student").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
@@ -414,6 +421,8 @@
 	  });
 	});
 
+
+  /*this is for making the search bar work for room tables*/
   $(document).ready(function(){
 	  $("#my_searchbar_rooms").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
@@ -422,5 +431,26 @@
 		});
 	  });
 	});
+
+
+
+
+  /*this is for retrieving all room nos for add student form*/
+  function get_room_for_registration()
+  {
+    $(document).ready(function(){
+      $.get('/roomid',function(data,status){
+				if(status=="success")
+				{
+					console.log(data);
+          $('#room_no').html(data);
+				}
+        else
+        {
+        	$('#room_no').html("<b>Couldn't connect</b>");
+        }
+	 		});		
+		});
+  }
 </script> 
 
