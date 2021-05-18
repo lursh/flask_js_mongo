@@ -109,10 +109,11 @@
               <div class="tab col-lg-2" style="width:100%;">
                 <button class="tablinks" style="width:100%;" onclick="openTab(event, 'list_students')">List all students</button>
                 <button class="tablinks" style="width:100%;" onclick="openTab(event, 'add_students')">Add a new student</button>
-                <button class="tablinks" style="width:100%;" onclick="openTab(event, 'list_staffs')">Tokyo</button>
+                <button class="tablinks" style="width:100%;" onclick="openTab(event, 'list_rooms')">List rooms</button>
+				        <button class="tablinks" style="width:100%;" onclick="openTab(event, 'add_rooms')">Add room</button>
               </div>
               
-              <div id="list_students" class="tabcontent" style="width:80%;">
+              <div id="list_students" class="tabcontent">
               <input class="form-control" placeholder="Who are you looking for?" id="my_searchbar_student" style="width:30vw;border-radius:50px;border-color:#413f40;border-size:1px;padding:5px;text-align:center;font-size:medium" type="text">
                 <div id="list_s"></div>
               </div>
@@ -122,74 +123,94 @@
                 <form id="add_student_form" enctype="multipart/form-data" method="POST" role="form">
 				  
 
-				  <div class="input-group input-group-lg">
-				    <input id="name" type="text" class="form-control" name="name" placeholder="Name">
-				 </div>
+                            <div class="input-group input-group-lg">
+                              <input id="name" type="text" class="form-control" name="name" placeholder="Name">
+                            </div>
 
-				  <div class="input-group input-group-lg">
-				     <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-				  </div>
-				  
-				  
-				  <div class="input-group input-group-lg">
-				      <input id="password1" type="password" class="form-control" name="password" placeholder="Password">
-				  </div>
-				  
-				  
-				  <div class="input-group input-group-lg">
-				    <input id="password2" type="password" class="form-control" name="password" placeholder="Retype Password">
-				  </div>
-				  
-				  
-				  <div class="input-group input-group-lg">
-				    <input id="dob" type="date" class="form-control" name="dob" placeholder="DOB">
-				  </div>
+                            <div class="input-group input-group-lg">
+                              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                            </div>
+                              
+                              
+                            <div class="input-group input-group-lg">
+                                <input id="password1" type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                              
+                              
+                            <div class="input-group input-group-lg">
+                              <input id="password2" type="password" class="form-control" name="password" placeholder="Retype Password">
+                            </div>
+                              
+                              
+                            <div class="input-group input-group-lg">
+                              <input id="dob" type="date" class="form-control" name="dob" placeholder="DOB">
+                            </div>
 
-				  
-				  <div class="input-group input-group-lg">
-				    <input id="phone" type="text" class="form-control" name="phone" placeholder="Phone">
-				  </div>
-				  
-				  <div class="input-group input-group-lg">
-				    <input id="home_address" type="text" class="form-control" name="home_address" placeholder="Home address">
-				  </div>
-				  
-				  <div class="input-group input-group-lg">
-				    <input id="gua_name" type="text" class="form-control" name="gua_name" placeholder="Guardian name">
-				  </div>
+                              
+                            <div class="input-group input-group-lg">
+                              <input id="phone" type="text" class="form-control" name="phone" placeholder="Phone">
+                            </div>
+                              
+                            <div class="input-group input-group-lg">
+                              <input id="home_address" type="text" class="form-control" name="home_address" placeholder="Home address">
+                            </div>
+                              
+                            <div class="input-group input-group-lg">
+                              <input id="gua_name" type="text" class="form-control" name="gua_name" placeholder="Guardian name">
+                            </div>
 
-				  <div class="input-group input-group-lg">
-				    <input id="gua_phone" type="text" class="form-control" name="gua_phone" placeholder="Guardian's Phone">
-				  </div>
+                            <div class="input-group input-group-lg">
+                              <input id="gua_phone" type="text" class="form-control" name="gua_phone" placeholder="Guardian's Phone">
+                            </div>
 
-				  <div class="input-group input-group-lg">
-				    <input id="institute_name" type="text" class="form-control" name="institute_name" placeholder="Institute name">
-				  </div>
+                            <div class="input-group input-group-lg">
+                              <input id="institute_name" type="text" class="form-control" name="institute_name" placeholder="Institute name">
+                            </div>
+                            <div class="input-group input-group-lg">
+                              <input id="room_no" type="text" class="form-control" name="room_no" placeholder="room no.">
+                            </div>
 
-				  <div class="input-group input-group-lg">
-				    <input id="room_no" type="text" class="form-control" name="room_no" placeholder="room no.">
-				  </div>
 
+                            <div class="input-group input-group-lg">
+                              <label class="form-control">Photo</label><input id="photo" type="file" class="form-control" name="photo" placeholder="Photo">
+                            </div>
 
-				  <div class="input-group input-group-lg">
-				    <label class="form-control">Photo</label><input id="photo" type="file" class="form-control" name="photo" placeholder="Photo">
-				  </div>
-
-				  <div class="input-group input-group-lg">
-				   
-				    <input id="login" type="button" onclick="add_students()" class="btn form-control" value="Login" name="password" placeholder="Password">
-				  </div>
-				</form>
-              </div>
+                            <div class="input-group input-group-lg">
+                            
+                              <input id="login" type="button" onclick="add_students()" class="btn form-control" value="Login" name="password" placeholder="Password">
+                            </div>
+				          </form>
+                </div>
               
-              <div id="list_staffs" class="tabcontent">
-                <h3>List of all staffs</h3>
-                <p>Tokyo is the capital of Japan.</p>
+              
+              <div id="list_rooms" class="tabcontent">
+                <h3>List of all Rooms</h3>
+                <input class="form-control" placeholder="Which room are you looking for?" id="my_searchbar_rooms" style="width:30vw;border-radius:50px;border-color:#413f40;border:1px;padding:5px;text-align:center;font-size:medium" type="text">
+                <div id="list_r"></div>
+                
               </div> 
 
-			<div id="" class="tabcontent">
-                <h3>List of all staffs</h3>
-                <p>Tokyo is the capital of Japan.</p>
+              <div id="add_rooms" class="tabcontent" >
+                  <h3>Add a room</h3>
+                  <form id="add_room_form" enctype="multipart/form-data" method="POST" role="form">
+            
+                    <div class="input-group input-group-lg">
+                      <input id="rnumber" type="text" disabled class="form-control" name="r_number" placeholder="Room number">
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                      <input id="rcapacity" type="text" class="form-control" name="r_capacity" placeholder="Room capacity">
+                    </div>
+                      
+                    <div class="input-group input-group-lg">
+                      <label class="form-control">Photo</label><input id="room_photo" type="file" class="form-control" name="photo" placeholder="Photo">
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                    
+                      <input id="login" type="button" onclick=add_rooms() class="btn form-control" value="Login" name="password" placeholder="Password">
+                  </div>
+                  </form>
               </div>
 
         </div>
@@ -219,25 +240,45 @@
       {
         get_students();
       }
-      // Show the current tab, and add an "active" class to the link that opened the tab
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
+
+
+      if(tabName=="add_rooms")
+        {
+          get_roomno()
+        }
+
+        if(tabName=="list_rooms")
+        {
+          get_rooms()
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    
+
+        
+        
+    
     } 
+
+
+
     function get_students()
     {
       $(document).ready(function(){
 			$.get('/students',function(data,status){
-					if(status=="success")
-					{
-						$("#list_s").html(data);
-						console.log(data);
-					
-					}
-          else
-          {
-            $('#list_s').html("<b>Couldn't connect</b>");
-          }
-			 });
+				if(status=="success")
+				{
+					$("#list_s").html(data);
+					console.log(data);
+				
+				}
+          		else
+          		{
+            		$('#list_s').html("<b>Couldn't connect</b>");
+          		}
+	 		});
 			
 		});
     }
@@ -290,10 +331,93 @@
 	}
 
 
+  function add_rooms()
+	{ 
+		$(document).ready(function(){	
+			var file_data=$('#room_photo').prop('files')[0];
+			var rnumber=$('#rnumber').prop('value');
+			var rcapacity=$('#rcapacity').prop('value');
+
+			var form_data2=new FormData();
+			form_data2.append('photo',file_data);
+			form_data2.append('rnumber',rnumber);
+			form_data2.append('rcapacity',rcapacity);
+			$.ajax({
+				url:'/addrooms',
+				dataType:'text',
+				cache:false,
+				contentType:false,
+				processData:false,
+				data:form_data2,
+				type:'post',
+				success:function(response){
+					alert(response);
+					$("#add_room_form")[0].reset();
+				}
+				
+			});
+		});
+		
+		
+	}
+
+
+
+	function get_roomno()
+	{
+    console.log("get room trigerred")
+		$(document).ready(function(){
+			$.get('/getmax',function(data,status){
+				if(status=="success")
+				{
+          console.log(data);
+					$('#rnumber').val(data);
+					
+				}
+        else
+        {
+            $('#rnumber').val("Oops can't fetch room id!!");
+        }
+	 		});		
+		});
+	}
+
+
+
+  function get_rooms()
+	{
+    console.log("get room trigerred")
+		$(document).ready(function(){
+      $.get('/rooms',function(data,status){
+				if(status=="success")
+				{
+					$("#list_r").html(data);
+					console.log(data);
+				
+				}
+          		else
+          		{
+            		$('#list_r').html("<b>Couldn't connect</b>");
+          		}
+	 		});		
+		});
+	}
+
+
+
 	$(document).ready(function(){
 	  $("#my_searchbar_student").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
-		$("#mytable1 tbody tr").filter(function() {
+		$("#mytablestudents tbody tr").filter(function() {
+		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	  });
+	});
+
+  $(document).ready(function(){
+	  $("#my_searchbar_rooms").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#mytablerooms tbody tr").filter(function() {
 		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 		});
 	  });

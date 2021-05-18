@@ -1,0 +1,19 @@
+<table id="mytablerooms" class="table table-striped">
+    <thead scope="row">
+        <th scope="col">#</th>
+        <th scope="col">Room number</th>
+		<th scope="col">Room Capacity</th>
+		<th scope="col">No. occupied</th>
+    </thead>
+    <tbody>
+{% for key1 in records.find() %}
+	<tr scope="row">	 
+		<td>{{ loop.index }}</td>    
+		<td>{{ key1['rnumber'] }}</td> 
+		<td>{{ key1['rcapacity'] }}</td>
+		<td>{{ key1['occupied_number'] }}</td>
+	</tr>
+{% endfor %}
+{% block content %}{% endblock %}
+    </tbody>
+</table>
