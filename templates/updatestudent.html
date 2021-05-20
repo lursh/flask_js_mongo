@@ -1,0 +1,34 @@
+
+  <div class="input-group input-group-lg" style="display:flex;">
+    <label class="form-label" style="flex:1;">Email</label><input value="{{ records['email'] }}" style="flex:2;" type="text" id="update_studentemail" class="form-control" disabled>
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Name</label><input type="text" value="{{ records['name'] }}" style="flex:2;" id="update_studentname" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Phone</label><input type="text" value="{{ records['phone'] }}" style="flex:2;" id="update_studentphone" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Guardian's Name</label><input value="{{ records['gua_name'] }}" style="flex:2;" type="text" id="update_studentguaname" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;"> 
+    <label class="form-label" style="flex:1;">Guardian's phone</label><input value="{{ records['gua_phone'] }}" style="flex:2;" type="text" id="update_studentguaphone" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">DOB</label><input type="date" value="{{ records['dob'] }}" style="flex:2;" id="update_studentdob" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Room no.</label>
+    <select style="flex:2;" id="update_studentroom" class="form-control">
+    </select>
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Institute Name</label><input value="{{ records['institute_name'] }}" style="flex:2;" type="text" id="update_studentInstitutename" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display: flex;">
+    <label class="form-label" style="flex:1;">Home Address</label><input value="{{ records['home_address'] }}"  style="flex:2;" type="text" id="update_studentaddress" class="form-control" >
+  </div>
+  <div class="input-group input-group-lg" style="display:flex;">
+    <button type="button" class="btn form-control" onclick=updatestudent()>Update</button>
+  </div>
+  
